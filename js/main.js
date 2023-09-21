@@ -20,6 +20,8 @@
 // instead of making and using json data, I can just make an array of javascript objects?
 // my javascript objects would be my views - broken down into key value pairs of the content to be populated to the corresponding html elements
 
+
+// MAIN JS ARRAY OF OBJECTS (VIEWS)
 /* this could look like:
 
     let views = [
@@ -59,11 +61,15 @@
     ]
 
 
+
+// HOW TO LOAD INITIALLY?
 // do i need to get the first view in the array to render immediately by using window onload? and then the rest are using 'click'
 
 
 // from here I need to create:
 
+
+// WHAT HAPPENS WHEN INCREMENTING THROUGH ARRAY
 // each within the array of view objects - use the index to increment through each view object dependent on a click
 
 //      - if the go-restart-button is clicked (assuming starting with view #0 and displaying the button-text "GO") - it will increment to view object #1
@@ -89,14 +95,24 @@
 //                  - this click should signal for the mapped symbols and number pairs to shuffle and update the renders in view #4 and #5
 
 
+// RENDERING THE JS CONTENT INTO HTML
 // need a way to 'populate' the content - (key value pairs) within each view object into it's corresponding html elements
 //      - this is also connected to the button 'click' handler when a new view is rendered
 //      - the html elements should have their connected css through bootstrap
 //
-//      - could possibly use getElementById and a for loop to fill in each element?
-//          - using
-//
+//      - could possibly use DOM methods
+//          - getElementById and a for loop to fill in each element?
+//          - document.body.innerHTML ? - no
+//              - setting the value of innerHTML lets you replace existing contents of an element with new content
+//              - replacing the contents for the document's body attribute
+//              - leaving the html elements blank/empty to be replaced?
+//                  - does that clash with my window onload?
 
+
+// EXTRA THOUGHTS
+// .textcontent - to populate text into the html elements...
+// - look into populating the refresh icon/svg
+// html - initialing variables and getElementById
 
 
 //button test
