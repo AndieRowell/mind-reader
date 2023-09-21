@@ -19,6 +19,7 @@
 
 // instead of making and using json data, I can just make an array of javascript objects?
 // my javascript objects would be my views - broken down into key value pairs of the content to be populated to the corresponding html elements
+
 /* this could look like:
 
     let views = [
@@ -56,6 +57,45 @@
             "go-button-content": //svg for the refresh icon
         }
     ]
+
+
+// do i need to get the first view in the array to render immediately by using window onload? and then the rest are using 'click'
+
+
+// from here I need to create:
+
+// each within the array of view objects - use the index to increment through each view object dependent on a click
+
+//      - if the go-restart-button is clicked (assuming starting with view #0 and displaying the button-text "GO") - it will increment to view object #1
+
+//      - (from view #1) - if the nav-button "NEXT" is clicked it will increment to view object #2
+//              - go-restart-button is displaying the refresh svg
+//                  - if the got-restart-button is clicked it will back increment? to the previous view or re-render to view #0
+
+//      - (from view #2) - if the nav-button "NEXT" is clicked it will increment to view object #3
+//              - go-restart-button is displaying the refresh svg
+//                  - if the go-restart-button is clicked it will back increment? to the previous view or re-render to view #0
+
+//      - (from view #3) - if the nav-button "NEXT" is clicked it will increment to view object #4
+//              - go-restart-button is displaying the refresh svg
+//                  - if the go-restart-button is clicked it will back increment? to the previous view or re-render to view #0
+
+//      - (from view #4) - if the nav-button "REVEAL" is clicked it will increment to view object #5
+//              - go-restart-button is displaying the refresh svg
+//                  - if the go-restart-button is clicked it will back increment? to the previous view or re-render to view #0
+
+//      - (from view #5) - only the go-restart button is displayed
+//              - if the go-restart-button is clicked it will re-render to view #0
+//                  - this click should signal for the mapped symbols and number pairs to shuffle and update the renders in view #4 and #5
+
+
+// need a way to 'populate' the content - (key value pairs) within each view object into it's corresponding html elements
+//      - this is also connected to the button 'click' handler when a new view is rendered
+//      - the html elements should have their connected css through bootstrap
+//
+//      - could possibly use getElementById and a for loop to fill in each element?
+//          - using
+//
 
 
 
