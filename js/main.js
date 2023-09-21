@@ -120,7 +120,10 @@
 // html - initialing variables and getElementById
 // including a scroll on view #4? - bootstrap?
 
-
+let maintext = document.getElementById("main-text").value
+let goButtonContent = document.getElementById("go-restart-btn").value
+let navButtonText = document.getElementById("nav-btn-text").value
+let subText = document.getElementById("sub-text").value
 
 //RENDERS ONLOAD
 // window.onload = //function
