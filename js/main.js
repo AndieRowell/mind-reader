@@ -107,6 +107,11 @@
 //              - replacing the contents for the document's body attribute
 //              - leaving the html elements blank/empty to be replaced?
 //                  - does that clash with my window onload?
+/*          document.getElementById("nav-btn") .onclick = function() {
+                document.getElementById("nav-btn").style.display = "none";
+            }
+*/
+
 
 
 // EXTRA THOUGHTS
@@ -116,6 +121,10 @@
 // including a scroll on view #4? - bootstrap?
 
 
+
+
+//RENDERS ONLOAD
+window.onload = //function
 
     let views = [
         {
@@ -151,4 +160,19 @@
             "sub-text": "Your symbol is ?", //also needs to connect to the randomize
             "go-button-content": //svg for the refresh icon
         }
-    ]
+    ];
+
+
+//FUNCTION TO INCREMENT THROUGH ARRAY OF VIEW OBJECTS
+let i = 0
+function changeView() {
+    if (i >= )
+
+}
+
+
+//TO HIDE ELEMENTS IN HTML USING DISPLAY PROPERTY
+
+document.getElementById("nav-btn") .onclick = function() {
+    document.getElementById("nav-btn").style.display = "none";
+} //this needs to happen at the same time as the clicks to increment through array
