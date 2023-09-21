@@ -122,57 +122,88 @@
 
 
 
-
 //RENDERS ONLOAD
-window.onload = //function
+// window.onload = //function
 
     let views = [
         {
-            "main-text": "I can read your mind",
-            "go-button-content": "GO"
+            mainText: "I can read your mind",
+            goButtonContent: "GO"
         },
         {
-            "main-text": "Pick a number from 01 - 99",
-            "nav-button-text": "NEXT",
-            "sub-text": "when you have your number click next",
-            "go-button-content": //svg???? for the refresh icon?
+            mainText: "Pick a number from 01 - 99",
+            navButtonText: "NEXT",
+            subText: "when you have your number click next",
+            goButtonContent: //svg???? for the refresh icon?
         },
         {
-            "main-text": "Add both digits together to get a new number",
-            "nav-button-text": "NEXT",
-            "sub-text": "Ex: 14 is 1 + 4 = 5 click next to proceed",
-            "go-button-content": //svg for the refresh icon
+            mainText: "Add both digits together to get a new number",
+            navButtonText: "NEXT",
+            subText: "Ex: 14 is 1 + 4 = 5 click next to proceed",
+            goButtonContent: //svg for the refresh icon
         },
         {
-            "main-text": "Subtract your new number from the original number",
-            "nav-button-text": "NEXT",
-            "sub-text": "Ex: 14 - 5 = 9 click next to proceed",
-            "go-button-content": //svg for the refresh icon
+            mainText: "Subtract your new number from the original number",
+            navButtonText: "NEXT",
+            subText: "Ex: 14 - 5 = 9 click next to proceed",
+            goButtonContent: //svg for the refresh icon
         },
         {
-            "main-text": "0 - &, 1 - #, 2 - @, 1 - !, 3 - ~, 4 - $, 5 - %, 6 - ^, 7 - *, 8 - +, 9 - ?", // this is where i need to add a way that randomizes this specific string
-            "nav-button-text": "NEXT",
-            "sub-text": "Find your new number. Note the symbol beside the number",
-            "go-button-content": //svg for the refresh icon
+            mainText: "0 - &, 1 - #, 2 - @, 1 - !, 3 - ~, 4 - $, 5 - %, 6 - ^, 7 - *, 8 - +, 9 - ?", // this is where i need to add a way that randomizes this specific string
+            navButtonText: "NEXT",
+            subText: "Find your new number. Note the symbol beside the number",
+            goButtonContent: //svg for the refresh icon
         },
         {
-            "main-text": "?", //this would have to be connected to the randomization of the previous symbols string - whatever the new symbol for 9 is should replace
-            "sub-text": "Your symbol is ?", //also needs to connect to the randomize
-            "go-button-content": //svg for the refresh icon
+            mainText: "?", //this would have to be connected to the randomization of the previous symbols string - whatever the new symbol for 9 is should replace
+            subText: "Your symbol is ?", //also needs to connect to the randomize
+            goButtonContent: //svg for the refresh icon
         }
     ];
 
 
 //FUNCTION TO INCREMENT THROUGH ARRAY OF VIEW OBJECTS
-let i = 0
+let i = 0;
 function changeView() {
-    if (i >= )
+    if (i >= views.length) i = 0;
+
+    document.getElementById("go-btn-text").innerHTML = views[i];
+    i++;
 
 }
 
 
-//TO HIDE ELEMENTS IN HTML USING DISPLAY PROPERTY
+// problem is both the go button and nav button need to increment the page
+//      - technically view #0 only needs to increment by 1 and then switches to refresh
+//      - nav button needs to increment from view #1 through #4
 
+
+// changing from view #0 to #1 with go button
+for (i = 0; i < 1; i++){
+    //document get element by id?
+    // this increments by one if less than index 1
+}
+
+// changing from view #2-#5 with nav button
+for (i = 0; i > 0 && < 5; i++){
+    //document get element by id?
+    // this increments by one if greater than index 0 AND less than index 5
+}
+
+// if page = 0 then go to 1
+// if page =
+
+// 1 for loop if i = 0 go button displays and next hidden
+ then - nesting for let i = 0 <=5
+
+
+
+
+//TO HIDE ELEMENTS IN HTML USING DISPLAY PROPERTY
+/*
 document.getElementById("nav-btn") .onclick = function() {
     document.getElementById("nav-btn").style.display = "none";
-} //this needs to happen at the same time as the clicks to increment through array
+}
+
+//this needs to happen at the same time as the clicks to increment through array
+*/
