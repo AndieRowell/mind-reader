@@ -74,6 +74,14 @@
 
 //      - if the go-restart-button is clicked (assuming starting with view #0 and displaying the button-text "GO") - it will increment to view object #1
 
+/*    if (currentViewIndex === 0) {
+        go-restart-btn.style.display = "block"; //when the view index is 0 - block
+        nav-btn.style.display = "none";
+        go-restart-btn.textContent = "GO"; // - but how do i call instead to the array
+}
+*/
+
+
 //      - (from view #1) - if the nav-button "NEXT" is clicked it will increment to view object #2
 //              - go-restart-button is displaying the refresh svg
 //                  - if the got-restart-button is clicked it will back increment? to the previous view or re-render to view #0
@@ -120,14 +128,24 @@
 // html - initialing variables and getElementById
 // including a scroll on view #4? - bootstrap?
 
-let maintext = document.getElementById("main-text").value
-let goButtonContent = document.getElementById("go-restart-btn").value
-let navButtonText = document.getElementById("nav-btn-text").value
+
+
+
+//reference my html elements
+let mainText = document.getElementById("main-text")
+let goButtonContent = document.getElementById("go-restart-btn")
+let navButtonText = document.getElementById("nav-btn-text")
 let subText = document.getElementById("sub-text").value
+
+//initialize the view index
+let currentViewIndex = 0;
+//initialize button's status? so it knows which button to switch to
+let goRestartButton =
 
 //RENDERS ONLOAD
 // window.onload = //function
 
+//array of view objects
     let views = [
         {
             mainText: "I can read your mind",
@@ -163,6 +181,45 @@ let subText = document.getElementById("sub-text").value
             goButtonContent: //svg for the refresh icon
         }
     ];
+
+
+//function to update view content with if statements
+
+function updateView() {
+    let currentView = views[currentViewIndex];
+    mainText.textContent = currentView. ///not sure how to write this
+    //have the others connected here
+
+
+}
+
+//calling that initial update view to update content
+
+
+
+//need event listeners for both buttons with if statements
+
+
+/* example:
+
+    header = document.getElementById('header')
+    header.textContent = array[i].header
+
+    - or
+    have a pageNum() function???
+
+    header.innerHTML = array[pageNum()].header
+
+
+
+
+
+
+
+
+
+
+
 
 
 //FUNCTION TO INCREMENT THROUGH ARRAY OF VIEW OBJECTS
