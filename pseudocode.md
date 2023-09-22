@@ -45,3 +45,6 @@
 
 - how would we provide mapping and randomize?
     - matching symbols to numbers
+
+### Mapping out the Views and what elements + content are visible/hidden for each view:
+![mindreader-pseudo-drawing](https://github.com/AndieRowell/mind-reader/assets/134252065/4062c4d7-036c-4cc2-9e03-b89d614f61d5)
