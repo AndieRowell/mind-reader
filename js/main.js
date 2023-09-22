@@ -74,7 +74,8 @@
 
 //      - if the go-restart-button is clicked (assuming starting with view #0 and displaying the button-text "GO") - it will increment to view object #1
 
-/*    if (currentViewIndex === 0) {
+/*
+   if (currentViewIndex === 0) {
         go-restart-btn.style.display = "block"; //when the view index is 0 - block
         nav-btn.style.display = "none";
         go-restart-btn.textContent = "GO"; // - but how do i call instead to the array
@@ -190,15 +191,46 @@ function updateView() {
     mainText.textContent = currentView. ///not sure how to write this
     //have the others connected here
 
+    if (currentViewIndex === 0) {
+        go-restart-btn.style.display = "block"; //needs to be written like object.style.display = value - when the view index is 0 - block
+        nav-btn.style.display = "none";
+        go-restart-btn.textContent = "GO"; // - but how do i call instead to the array
+    }
+    else if (currenViewIndex === views.length - 1) {
+        go-restart-btn.style.display = "none"; //means the go button will be hidden
+        nav-btn.style.display = "block";
+        nav-btn.textContent = "Next";// use textcontent to push in the new text
+
+    }
+    else {
+        go-restart-btn.style.display = "block";
+        nav-btn.style.display = "none";
+        nav-btn.textContent = "Reveal";
+    }
 
 }
 
 //calling that initial update view to update content
-
+updateView();
 
 
 //need event listeners for both buttons with if statements
+//go-restart button -
+go-restart-btn.addEventListener("click", () => {
+    if (currentViewIndex === 0) {
+        currentViewIndex = 1;
+    } else {
+        currentViewIndex = 0;
+    }
+    updateView();
+})
 
+nav-btn.addEventListener("click", () => {
+    if (currentViewIndex < views.length - 2){
+        currentViewIndex++;
+        updateView();
+    }
+})
 
 /* example:
 
