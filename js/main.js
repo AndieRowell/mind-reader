@@ -129,7 +129,7 @@
 // html - initialing variables and getElementById
 // including a scroll on view #4? - bootstrap?
 
-
+// ---------------------------------------------------------------------------------------------
 
 
 //reference my html elements
@@ -140,10 +140,11 @@ let subText = document.getElementById("sub-text").value
 
 //initialize the view index
 let currentViewIndex = 0;
-//initialize button's status? so it knows which button to switch to
-let goRestartButton =
 
-//RENDERS ONLOAD
+//initialize button's status? so it knows which button to switch to
+
+
+//RENDERS ONLOAD?
 // window.onload = //function
 
 //array of view objects
@@ -188,7 +189,10 @@ let goRestartButton =
 
 function updateView() {
     let currentView = views[currentViewIndex];
-    mainText.textContent = currentView. ///not sure how to write this
+    mainText.textContent = currentView.mainText ///not sure how to write this?
+    navButtonText.textContent = currentView.navButtonText || "";
+    subText.textContent = currentView.subText || "";
+    goButtonContent.textContent = currentView.goButtonContent || "";
     //have the others connected here
 
     if (currentViewIndex === 0) {
@@ -196,7 +200,7 @@ function updateView() {
         nav-btn.style.display = "none";
         go-restart-btn.textContent = "GO"; // - but how do i call instead to the array
     }
-    else if (currenViewIndex === views.length - 1) {
+    else if (currentViewIndex === views.length - 1) {
         go-restart-btn.style.display = "none"; //means the go button will be hidden
         nav-btn.style.display = "block";
         nav-btn.textContent = "Next";// use textcontent to push in the new text
@@ -215,7 +219,7 @@ updateView();
 
 
 //need event listeners for both buttons with if statements
-//go-restart button -
+
 go-restart-btn.addEventListener("click", () => {
     if (currentViewIndex === 0) {
         currentViewIndex = 1;
@@ -231,6 +235,14 @@ nav-btn.addEventListener("click", () => {
         updateView();
     }
 })
+
+
+
+
+//figure out how to randomize or shuffle the symbols and map them? do i do this within the original array?
+let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "("];
+let randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+
 
 /* example:
 
