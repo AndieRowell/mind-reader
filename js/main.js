@@ -134,9 +134,13 @@
 
 //reference my html elements
 let mainText = document.getElementById("main-text")
-let goButtonContent = document.getElementById("go-restart-btn")
+let goButtonContent = document.getElementById("go-btn-text")
 let navButtonText = document.getElementById("nav-btn-text")
-let subText = document.getElementById("sub-text").value
+let subText = document.getElementById("sub-text")
+
+//need to reference my buttons themselves too?
+let goRestartBtn = document.getElementById("go-restart-btn")
+let navBtn = document.getElementById("nav-btn")
 
 //initialize the view index
 let currentViewIndex = 0;
@@ -157,30 +161,30 @@ let currentViewIndex = 0;
             mainText: "Pick a number from 01 - 99",
             navButtonText: "NEXT",
             subText: "when you have your number click next",
-            goButtonContent: //svg???? for the refresh icon?
+            goButtonContent: "RESTART" //or svg/icon for the restart
         },
         {
             mainText: "Add both digits together to get a new number",
             navButtonText: "NEXT",
             subText: "Ex: 14 is 1 + 4 = 5 click next to proceed",
-            goButtonContent: //svg for the refresh icon
+            goButtonContent: "RESTART" //or svg/icon for the restart
         },
         {
             mainText: "Subtract your new number from the original number",
             navButtonText: "NEXT",
             subText: "Ex: 14 - 5 = 9 click next to proceed",
-            goButtonContent: //svg for the refresh icon
+            goButtonContent: "RESTART" //or svg/icon for the restart
         },
         {
             mainText: "0 - &, 1 - #, 2 - @, 1 - !, 3 - ~, 4 - $, 5 - %, 6 - ^, 7 - *, 8 - +, 9 - ?", // this is where i need to add a way that randomizes this specific string
             navButtonText: "NEXT",
             subText: "Find your new number. Note the symbol beside the number",
-            goButtonContent: //svg for the refresh icon
+            goButtonContent: "RESTART" //or svg/icon for the restart
         },
         {
             mainText: "?", //this would have to be connected to the randomization of the previous symbols string - whatever the new symbol for 9 is should replace
             subText: "Your symbol is ?", //also needs to connect to the randomize
-            goButtonContent: //svg for the refresh icon
+            goButtonContent: "RESTART" //or svg/icon for the restart
         }
     ];
 
@@ -189,27 +193,27 @@ let currentViewIndex = 0;
 
 function updateView() {
     let currentView = views[currentViewIndex];
-    mainText.textContent = currentView.mainText ///not sure how to write this?
-    navButtonText.textContent = currentView.navButtonText || "";
-    subText.textContent = currentView.subText || "";
-    goButtonContent.textContent = currentView.goButtonContent || "";
+    mainText.textContent = currentView.mainText //not sure how to write this?
+    navButtonText.textContent = currentView.navButtonText //|| "";
+    subText.textContent = currentView.subText //|| "";
+    goButtonContent.textContent = currentView.goButtonContent //|| "";
     //have the others connected here
 
     if (currentViewIndex === 0) {
-        go-restart-btn.style.display = "block"; //needs to be written like object.style.display = value - when the view index is 0 - block
-        nav-btn.style.display = "none";
-        go-restart-btn.textContent = "GO"; // - but how do i call instead to the array
+        goRestartBtn.style.display = "block"; //needs to be written like object.style.display = value - when the view index is 0 - block
+        navBtn.style.display = "none";
+        goRestartBtn.textContent = "GO"; // - but how do i call instead to the array
     }
     else if (currentViewIndex === views.length - 1) {
-        go-restart-btn.style.display = "none"; //means the go button will be hidden
-        nav-btn.style.display = "block";
-        nav-btn.textContent = "Next";// use textcontent to push in the new text
+        goRestartBtn.style.display = "none"; //means the go button will be hidden
+        navBtn.style.display = "block";
+        navBtn.textContent = "Next";// use textcontent to push in the new text
 
     }
     else {
-        go-restart-btn.style.display = "block";
-        nav-btn.style.display = "none";
-        nav-btn.textContent = "Reveal";
+        goRestartBtn.style.display = "block";
+        navBtn.style.display = "none";
+        navBtn.textContent = "Reveal";
     }
 
 }
@@ -220,8 +224,9 @@ updateView();
 
 //need event listeners for both buttons with if statements
 
-go-restart-btn.addEventListener("click", () => {
+goRestartBtn.addEventListener("click", () => {
     if (currentViewIndex === 0) {
+        //if on view index 0 - when clicked increment to view 1
         currentViewIndex = 1;
     } else {
         currentViewIndex = 0;
@@ -229,8 +234,9 @@ go-restart-btn.addEventListener("click", () => {
     updateView();
 })
 
-nav-btn.addEventListener("click", () => {
+navBtn.addEventListener("click", () => {
     if (currentViewIndex < views.length - 2){
+        //increment to th next view, except on the second to last view
         currentViewIndex++;
         updateView();
     }
